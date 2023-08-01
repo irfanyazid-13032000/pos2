@@ -667,7 +667,7 @@ class SaleController extends Controller
                     // Charge the Customer instead of the card:
                     $charge = \Stripe\Charge::create([
                         'amount' => $grand_total * 100,
-                        'currency' => 'usd',
+                        'currency' => 'Rp',
                         'customer' => $customer->id
                     ]);
                     $data['customer_stripe_id'] = $customer->id;
@@ -678,7 +678,7 @@ class SaleController extends Controller
 
                     $charge = \Stripe\Charge::create([
                         'amount' => $grand_total * 100,
-                        'currency' => 'usd',
+                        'currency' => 'Rp',
                         'customer' => $customer_id, // Previously stored, then retrieved
                     ]);
                     $data['customer_stripe_id'] = $customer_id;
@@ -2062,7 +2062,7 @@ class SaleController extends Controller
                 // Charge the Customer instead of the card:
                 $charge = \Stripe\Charge::create([
                     'amount' => $amount * 100,
-                    'currency' => 'usd',
+                    'currency' => 'Rp',
                     'customer' => $customer->id,
                 ]);
                 $data['customer_stripe_id'] = $customer->id;
@@ -2073,7 +2073,7 @@ class SaleController extends Controller
 
                 $charge = \Stripe\Charge::create([
                     'amount' => $amount * 100,
-                    'currency' => 'usd',
+                    'currency' => 'RP',
                     'customer' => $customer_id, // Previously stored, then retrieved
                 ]);
                 $data['customer_stripe_id'] = $customer_id;
@@ -2265,7 +2265,7 @@ class SaleController extends Controller
 
                 $charge = \Stripe\Charge::create([
                     'amount' => $data['edit_amount'] * 100,
-                    'currency' => 'usd',
+                    'currency' => 'Rp',
                     'customer' => $customer_id
                 ]);
                 $lims_payment_with_credit_card_data->charge_id = $charge->id;
@@ -2283,7 +2283,7 @@ class SaleController extends Controller
 
                     $charge = \Stripe\Charge::create([
                         'amount' => $amount * 100,
-                        'currency' => 'usd',
+                        'currency' => 'Rp',
                         'customer' => $customer->id,
                     ]);
                     $data['customer_stripe_id'] = $customer->id;
@@ -2294,7 +2294,7 @@ class SaleController extends Controller
 
                     $charge = \Stripe\Charge::create([
                         'amount' => $amount * 100,
-                        'currency' => 'usd',
+                        'currency' => 'RP',
                         'customer' => $customer_id
                     ]);
                     $data['customer_stripe_id'] = $customer_id;

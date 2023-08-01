@@ -968,7 +968,7 @@ class PurchaseController extends Controller
             // Charge the Customer
             $charge = \Stripe\Charge::create([
                 'amount' => $amount * 100,
-                'currency' => 'usd',
+                'currency' => 'Rp',
                 'source' => $token,
             ]);
 
@@ -1068,7 +1068,7 @@ class PurchaseController extends Controller
 
                 $charge = \Stripe\Charge::create([
                     'amount' => $amount * 100,
-                    'currency' => 'usd',
+                    'currency' => 'Rp',
                     'source' => $token,
                 ]);
 
@@ -1079,7 +1079,7 @@ class PurchaseController extends Controller
                 // Charge the Customer
                 $charge = \Stripe\Charge::create([
                     'amount' => $amount * 100,
-                    'currency' => 'usd',
+                    'currency' => 'Rp',
                     'source' => $token,
                 ]);
 
