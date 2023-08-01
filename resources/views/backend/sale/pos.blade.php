@@ -1034,7 +1034,7 @@
                             <button style="background: #00cec9" type="button" class="btn btn-custom payment-btn" data-toggle="modal" data-target="#add-payment" id="cash-btn"><i class="fa fa-money"></i> {{trans('file.Cash')}}</button>
                         </div>
                         <div class="column-5">
-                            <button style="background-color: #213170" type="button" class="btn btn-custom payment-btn" data-toggle="modal" data-target="#add-payment" id="paypal-btn"><i class="fa fa-paypal"></i> {{trans('file.PayPal')}}</button>
+                            <button style="background-color: #213170" type="button" class="btn btn-custom payment-btn" data-toggle="modal" data-target="#add-payment" id="paypal-btn"><i class="fa fa-qris"></i> Qris</button>
                         </div>
                         <div class="column-5">
                             <button style="background-color: #e28d02" type="button" class="btn btn-custom" id="draft-btn"><i class="dripicons-flag"></i> {{trans('file.Draft')}}</button>
@@ -1362,7 +1362,7 @@
                             @foreach($lims_category_list as $category)
                             <div class="col-md-3 category-img text-center" data-category="{{$category->id}}">
                                 @if($category->image)
-                                    <img  src="{{asset('images/category/20200701093146.jpg')}}" />
+                                    <img  src="{{asset('images/category/'.$category->image)}}" />
                                 @else
                                 <img  src="{{asset('images/category/20200701093146.jpg')}}" />
                                 @endif
@@ -2361,6 +2361,7 @@ $('.category-img').on('click', function(){
 
     $(".table-container").children().remove();
     $.get('sales/getproduct/' + category_id + '/' + brand_id, function(data) {
+        console.log(data);
         populateProduct(data);
     });
 });
