@@ -133,7 +133,7 @@ class ProductController extends Controller
                 $nestedData['key'] = $key;
                 $product_image = explode(",", $product->image);
                 $product_image = htmlspecialchars($product_image[0]);
-                $nestedData['image'] = '<img src="'.asset('storage/images/product'.$product_image).'" height="80" width="80">';
+                $nestedData['image'] = '<img src="'.asset('/images/product/'.$product_image).'" height="80" width="80">';
                 $nestedData['name'] = $product->name;
                 $nestedData['code'] = $product->code;
                 if($product->brand_id)
