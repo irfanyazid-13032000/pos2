@@ -70,6 +70,7 @@ class LoginController extends Controller
 
         if(auth()->attempt(array($fieldType => $input['name'], 'password' => $input['password'])))
         {
+            setcookie('language', 'id', time() + (86400 * 365), "/");
             return redirect('/');
         }
         else {
