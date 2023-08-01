@@ -19,6 +19,7 @@ class CategoryController extends Controller
         if($role->hasPermissionTo('category')) {
             $lims_categories = Category::where('is_active', true)->pluck('name', 'id');
             $lims_category_all = Category::where('is_active', true)->get();
+            // dd($lims_category_all);
             return view('backend.category.create',compact('lims_categories', 'lims_category_all'));
         }
         else
@@ -74,7 +75,7 @@ class CategoryController extends Controller
                 $nestedData['key'] = $key;
 
                 if($category->image)
-                    $nestedData['image'] = '<img src="'.url('public/images/category', $category->image).'" height="70" width="70">';
+                    $nestedData['image'] = '<img src="'.asset('images/category/'. $category->image).'" height="70" width="70">';
                 else
                     $nestedData['image'] = '<img src="'.url('public/images/product/zummXD2dvAtI.png').'" height="80" width="80">';
 
