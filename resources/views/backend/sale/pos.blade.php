@@ -1362,9 +1362,9 @@
                             @foreach($lims_category_list as $category)
                             <div class="col-md-3 category-img text-center" data-category="{{$category->id}}">
                                 @if($category->image)
-                                    <img  src="{{asset('images/category/duhh.jpg')}}" />
+                                    <img  src="{{asset('images/category/20200701093146.jpg')}}" />
                                 @else
-                                <img  src="{{asset('images/category/duhh.jpg')}}" />
+                                <img  src="{{asset('images/category/20200701093146.jpg')}}" />
                                 @endif
                                 <p class="text-center">{{$category->name}}</p>
                             </div>
