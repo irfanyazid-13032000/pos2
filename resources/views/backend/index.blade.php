@@ -54,7 +54,7 @@
                   <div class="wrapper count-title">
                     <div class="icon"><i class="dripicons-graph-bar" style="color: #733686"></i></div>
                     <div>
-                        <div class="count-number revenue-data">{{number_format((float)$revenue, 2, '.', '')}}</div>
+                        <div class="count-number revenue-data">Rp. {{number_format($revenue,0,'','.')}}</div>
                         <div class="name"><strong style="color: #733686">{{ trans('file.revenue') }}</strong></div>
                     </div>
                   </div>
@@ -64,7 +64,7 @@
                   <div class="wrapper count-title">
                     <div class="icon"><i class="dripicons-return" style="color: #ff8952"></i></div>
                     <div>
-                        <div class="count-number return-data">{{number_format((float)$return, 2, '.', '')}}</div>
+                        <div class="count-number return-data">Rp. {{number_format($return, 0, '', '.')}}</div>
                         <div class="name"><strong style="color: #ff8952">{{trans('file.Sale Return')}}</strong></div>
                     </div>
                   </div>
@@ -74,7 +74,7 @@
                   <div class="wrapper count-title">
                     <div class="icon"><i class="dripicons-media-loop" style="color: #00c689"></i></div>
                     <div>
-                        <div class="count-number purchase_return-data">{{number_format((float)$purchase_return, 2, '.', '')}}</div>
+                        <div class="count-number purchase_return-data">Rp. {{number_format($purchase_return, 0, '', '.')}}</div>
                         <div class="name"><strong style="color: #00c689">{{trans('file.Purchase Return')}}</strong></div>
                     </div>
                   </div>
@@ -84,7 +84,7 @@
                   <div class="wrapper count-title">
                     <div class="icon"><i class="dripicons-trophy" style="color: #297ff9"></i></div>
                     <div>
-                        <div class="count-number profit-data">{{number_format((float)$profit, 2, '.', '')}}</div>
+                        <div class="count-number profit-data">Rp. {{number_format($profit, 0, '', '.')}}</div>
                         <div class="name"><strong style="color: #297ff9">{{trans('file.profit')}}</strong></div>
                     </div>
                   </div>
@@ -402,27 +402,31 @@
         var start_date = $(this).data('start_date');
         var end_date = $(this).data('end_date');
         $.get('dashboard-filter/' + start_date + '/' + end_date, function(data) {
-            //console.log(data);
+            console.log(data);
             dashboardFilter(data);
         });
     });
 
     function dashboardFilter(data){
         $('.revenue-data').hide();
-        $('.revenue-data').html(parseFloat(data[0]).toFixed(2));
+        $('.revenue-data').html("Rp. "+FormatRupiah(data[0]));
         $('.revenue-data').show(500);
 
         $('.return-data').hide();
-        $('.return-data').html(parseFloat(data[1]).toFixed(2));
+        $('.return-data').html("Rp. "+FormatRupiah(data[1]));
         $('.return-data').show(500);
 
         $('.profit-data').hide();
-        $('.profit-data').html(parseFloat(data[2]).toFixed(2));
+        $('.profit-data').html("Rp. "+FormatRupiah(data[2]));
         $('.profit-data').show(500);
 
         $('.purchase_return-data').hide();
-        $('.purchase_return-data').html(parseFloat(data[3]).toFixed(2));
+        $('.purchase_return-data').html("Rp. "+FormatRupiah(data[3]));
         $('.purchase_return-data').show(500);
+    }
+
+    function FormatRupiah(angka) {
+      return angka.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     }
 </script>
 @endpush

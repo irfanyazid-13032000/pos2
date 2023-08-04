@@ -12,6 +12,56 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="manifest" href="{{url('manifest.json')}}">
 
+    <style>
+
+        /* Normal state styles */
+.side-menu li {
+  padding: 10px; /* Adjust the padding as needed */
+  transition: background-color 0.3s ease; /* Add a smooth transition effect */
+}
+
+/* Hover state styles for the <li> element */
+.side-menu li:hover {
+  background-color: #7C5CC4;
+  color: white; /* Text color of the <li> element when hovered */
+}
+
+/* Text color of the <span> element */
+.side-menu li a span {
+  color: black; /* Set the default text color */
+}
+
+/* Text color of the <span> element when its parent <li> is hovered */
+.side-menu li:hover a span {
+  color: white;
+}
+
+/* Normal state styles */
+ul.collapse li {
+  padding: 10px; /* Adjust the padding as needed */
+  transition: background-color 0.3s ease; /* Add a smooth transition effect */
+}
+
+/* Hover state styles for the <li> element */
+ul.collapse li:hover {
+  background-color: #7C5CC4;
+}
+
+/* Text color of the <a> element */
+ul.collapse li a {
+  color: black; /* Set the default text color */
+  text-decoration: none; /* Remove underline from links */
+}
+
+/* Text color of the <a> element when its parent <li> is hovered */
+ul.collapse li:hover a {
+  color: white;
+}
+
+
+
+    </style>
+
 
     <!-- Bootstrap CSS-->
     <!-- sudah dipindah ke pos3 -->
