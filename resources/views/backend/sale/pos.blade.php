@@ -2339,6 +2339,10 @@ $('body').on('click', function(e){
     $('.filter-window').hide('slide', {direction: 'right'}, 'fast');
 });
 
+$('.filter-window').show('slide', {direction: 'right'}, 'fast');
+    $('.category').show();
+    $('.brand').hide();
+
 $('#category-filter').on('click', function(e){
     e.stopPropagation();
     $('.filter-window').show('slide', {direction: 'right'}, 'fast');
