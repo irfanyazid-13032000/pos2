@@ -1387,17 +1387,17 @@
                     </div>
                 </div>
           <div class="row">
-                    <div class="col-md-4">
+                    
                     <button class="btn btn-block btn-primary" id="category-filter" style="backdrop-filter: blur(8px) saturate(150%); background-color: #f0f0f0; color: #000; font-family: 'Nunito Sans', 'Roboto', sans-serif; font-size: 16px; font-weight: bold; padding: 10px;">{{trans('file.category')}}</button>
 
 
-                    </div>
-                    <div class="col-md-4">
+                   
+                    <!-- <div class="col-md-4">
                         <button class="btn btn-block btn-info" id="brand-filter">{{trans('file.Brand')}}</button>
-                    </div>
-                    <div class="col-md-4">
+                    </div> -->
+                    <!-- <div class="col-md-4">
                         <button class="btn btn-block btn-danger" id="featured-filter">{{trans('file.Featured')}}</button>
-                    </div>
+                    </div> -->
                     <div class="col-md-12 mt-1 table-container">
                         <table id="product-table" class="table no-shadow product-list">
                             <thead class="d-none">
