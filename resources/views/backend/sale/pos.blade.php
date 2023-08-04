@@ -1001,22 +1001,22 @@
                                 <div class="col-12 totals" style="background-color: #141b2e; color: #ffffff; border-radius: 15px; padding-top: 10px;">
                                 <div class="row">
                                     <div class="col-sm-4">
-                                        <span class="totals-title">{{trans('file.Items')}}</span><span id="item">0</span>
+                                        <span class="totals-title" style="font-size:20px;">{{trans('file.Items')}}</span><span id="item" style="font-size:20px;">0</span>
                                     </div>
                                     <div class="col-sm-4">
                                         <span class="totals-title">{{trans('file.Total')}}</span><span id="subtotal">0.00</span>
                                     </div>
                                     <div class="col-sm-4">
-                                        <span class="totals-title">{{trans('file.Discount')}} <button type="button" class="btn btn-link btn-sm" data-toggle="modal" data-target="#order-discount-modal"> <i class="dripicons-document-edit"></i></button></span><span id="discount">0.00</span>
+                                        <!-- <span class="totals-title">{/{trans('file.Discount')}} <button type="button" class="btn btn-link btn-sm" data-toggle="modal" data-target="#order-discount-modal"> <i class="dripicons-document-edit"></i></button></span><span id="discount">0.00</span> -->
                                     </div>
                                     <div class="col-sm-4">
-                                        <span class="totals-title">{{trans('file.Coupon')}} <button type="button" class="btn btn-link btn-sm" data-toggle="modal" data-target="#coupon-modal"><i class="dripicons-document-edit"></i></button></span><span id="coupon-text">0.00</span>
+                                        <!-- <span class="totals-title">{/{trans('file.Coupon')}} <button type="button" class="btn btn-link btn-sm" data-toggle="modal" data-target="#coupon-modal"><i class="dripicons-document-edit"></i></button></span><span id="coupon-text">0.00</span> -->
                                     </div>
                                     <div class="col-sm-4">
-                                        <span class="totals-title">{{trans('file.Tax')}} <button type="button" class="btn btn-link btn-sm" data-toggle="modal" data-target="#order-tax"><i class="dripicons-document-edit"></i></button></span><span id="tax">0.00</span>
+                                        <!-- <span class="totals-title">{/{trans('file.Tax')}} <button type="button" class="btn btn-link btn-sm" data-toggle="modal" data-target="#order-tax"><i class="dripicons-document-edit"></i></button></span><span id="tax">0.00</span> -->
                                     </div>
                                     <div class="col-sm-4">
-                                        <span class="totals-title">{{trans('file.Shipping')}} <button type="button" class="btn btn-link btn-sm" data-toggle="modal" data-target="#shipping-cost-modal"><i class="dripicons-document-edit"></i></button></span><span id="shipping-cost">0.00</span>
+                                        <!-- <span class="totals-title">{/{trans('file.Shipping')}} <button type="button" class="btn btn-link btn-sm" data-toggle="modal" data-target="#shipping-cost-modal"><i class="dripicons-document-edit"></i></button></span><span id="shipping-cost">0.00</span> -->
                                     </div>
                                 </div>
                                     </div>
