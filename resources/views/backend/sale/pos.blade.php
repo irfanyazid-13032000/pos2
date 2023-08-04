@@ -941,7 +941,7 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="table-responsive transaction-list">
-                                        <table id="myTable" class="table table-hover table-striped order-list table-fixed">
+                                        <table id="myTable" class="table table-hover table-striped order-list table-fixed" style="overflow:scroll;">
                                             <thead>
                                                 <tr>
                                                     <th class="col-sm-2">{{trans('file.product')}}</th>
@@ -2356,7 +2356,7 @@ $('.category-img').on('click', function(){
 
     $(".table-container").children().remove();
     $.get('sales/getproduct/' + category_id + '/' + brand_id, function(data) {
-        console.log(data);
+        // console.log(data);
         populateProduct(data);
     });
 });
@@ -2576,11 +2576,11 @@ $(document).on('click', '.product-img', function() {
         alert('Please select Warehouse!');
     else{
         var data = $(this).data('product');
-        console.log(data)
+        // console.log(data)
         product_info = data.split(" ");
-        console.log(product_info)
+        // console.log(product_info)
         pos = product_code.indexOf(product_info[0]);
-        console.log(pos)
+        // console.log(pos)
         if(pos < 0)
             alert('Product is not avaialable in the selected warehouse');
         else{
@@ -2679,6 +2679,8 @@ $('button[name="update_btn"]').on("click", function() {
         var row_unit_operation_value = unit_operation_value[rowindex].slice(0, unit_operation_value[rowindex].indexOf(","));
         if (row_unit_operator == '*') {
             product_price[rowindex] = $('input[name="edit_unit_price"]').val() / row_unit_operation_value;
+            console.log(product_price)
+
         } else {
             product_price[rowindex] = $('input[name="edit_unit_price"]').val() * row_unit_operation_value;
         }
@@ -2930,7 +2932,7 @@ function productSearch(data) {
             data: data
         },
         success: function(data) {
-            console.log(pre_qty);
+            // console.log(pre_qty);
             var flag = 1;
             if (pre_qty > 0) {
                 /*if(pre_qty)
