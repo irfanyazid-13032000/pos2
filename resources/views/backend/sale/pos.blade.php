@@ -998,32 +998,33 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12 totals" style="border-top: 2px solid #e4e6fc; padding-top: 10px;">
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <span class="totals-title">{{trans('file.Items')}}</span><span id="item">0</span>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <span class="totals-title">{{trans('file.Total')}}</span><span id="subtotal">0.00</span>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <span class="totals-title">{{trans('file.Discount')}} <button type="button" class="btn btn-link btn-sm" data-toggle="modal" data-target="#order-discount-modal"> <i class="dripicons-document-edit"></i></button></span><span id="discount">0.00</span>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <span class="totals-title">{{trans('file.Coupon')}} <button type="button" class="btn btn-link btn-sm" data-toggle="modal" data-target="#coupon-modal"><i class="dripicons-document-edit"></i></button></span><span id="coupon-text">0.00</span>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <span class="totals-title">{{trans('file.Tax')}} <button type="button" class="btn btn-link btn-sm" data-toggle="modal" data-target="#order-tax"><i class="dripicons-document-edit"></i></button></span><span id="tax">0.00</span>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <span class="totals-title">{{trans('file.Shipping')}} <button type="button" class="btn btn-link btn-sm" data-toggle="modal" data-target="#shipping-cost-modal"><i class="dripicons-document-edit"></i></button></span><span id="shipping-cost">0.00</span>
-                                        </div>
+                                <div class="col-12 totals" style="background-color: #141b2e; color: #ffffff; border-radius: 15px; padding-top: 10px;">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <span class="totals-title">{{trans('file.Items')}}</span><span id="item">0</span>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <span class="totals-title">{{trans('file.Total')}}</span><span id="subtotal">0.00</span>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <span class="totals-title">{{trans('file.Discount')}} <button type="button" class="btn btn-link btn-sm" data-toggle="modal" data-target="#order-discount-modal"> <i class="dripicons-document-edit"></i></button></span><span id="discount">0.00</span>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <span class="totals-title">{{trans('file.Coupon')}} <button type="button" class="btn btn-link btn-sm" data-toggle="modal" data-target="#coupon-modal"><i class="dripicons-document-edit"></i></button></span><span id="coupon-text">0.00</span>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <span class="totals-title">{{trans('file.Tax')}} <button type="button" class="btn btn-link btn-sm" data-toggle="modal" data-target="#order-tax"><i class="dripicons-document-edit"></i></button></span><span id="tax">0.00</span>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <span class="totals-title">{{trans('file.Shipping')}} <button type="button" class="btn btn-link btn-sm" data-toggle="modal" data-target="#shipping-cost-modal"><i class="dripicons-document-edit"></i></button></span><span id="shipping-cost">0.00</span>
                                     </div>
                                 </div>
+                                    </div>
+
                             </div>
                         </div>
                     </div>
-                    <div class="payment-amount">
+                    <div class="payment-amount" style="border-radius:30px">
                         <h2>{{trans('file.grand total')}} <span id="grand-total">0.00</span></h2>
                     </div>
                     <div class="payment-options">
@@ -1387,7 +1388,9 @@
                 </div>
           <div class="row">
                     <div class="col-md-4">
-                        <button class="btn btn-block btn-primary" id="category-filter">{{trans('file.category')}}</button>
+                    <button class="btn btn-block btn-primary" id="category-filter" style="backdrop-filter: blur(8px) saturate(150%); background-color: #f0f0f0; color: #000; font-family: 'Nunito Sans', 'Roboto', sans-serif; font-size: 16px; font-weight: bold; padding: 10px;">{{trans('file.category')}}</button>
+
+
                     </div>
                     <div class="col-md-4">
                         <button class="btn btn-block btn-info" id="brand-filter">{{trans('file.Brand')}}</button>
@@ -2384,14 +2387,14 @@ function populateProduct(data) {
     if (Object.keys(data).length != 0) {
         $.each(data['name'], function(index) {
             var product_info = data['code'][index]+' (' + data['name'][index] + ')';
-            if(index % 5 == 0 && index != 0)
-                tableData += '</tr><tr><td class="product-img sound-btn" title="'+data['name'][index]+'" data-product = "'+product_info+'"><img  src="images/product/'+data['image'][index]+'" width="100%" /><p>'+data['name'][index]+'</p><span>'+data['code'][index]+'</span></td>';
+            if(index % 3 == 0 && index != 0)
+                tableData += '</tr><tr><td class="product-img sound-btn" title="'+data['name'][index]+'" data-product = "'+product_info+'"><img  src="images/product/'+data['image'][index]+'" width="100%" /><p style="font-size: 20px; font-weight: bold;">'+data['name'][index]+'</p><span>Rp. '+data['price'][index]+'</span></td>';
             else
-                tableData += '<td class="product-img sound-btn" title="'+data['name'][index]+'" data-product = "'+product_info+'"><img  src="images/product/'+data['image'][index]+'" width="100%" /><p>'+data['name'][index]+'</p><span>'+data['code'][index]+'</span></td>';
+                tableData += '<td class="product-img sound-btn" title="'+data['name'][index]+'" data-product = "'+product_info+'"><img  src="images/product/'+data['image'][index]+'" width="100%" /><p style="font-size: 20px; font-weight: bold;">'+data['name'][index]+'</p><span>Rp. '+data['price'][index]+'</span></td>';
         });
 
-        if(data['name'].length % 5){
-            var number = 5 - (data['name'].length % 5);
+        if(data['name'].length % 3){
+            var number = 3 - (data['name'].length % 3);
             while(number > 0)
             {
                 tableData += '<td style="border:none;"></td>';
@@ -2420,6 +2423,7 @@ function populateProduct(data) {
         $(".table-container").html(tableData);
     }
 }
+
 
 $('select[name="customer_id"]').on('change', function() {
     saveValue(this);
@@ -2568,8 +2572,11 @@ $(document).on('click', '.product-img', function() {
         alert('Please select Warehouse!');
     else{
         var data = $(this).data('product');
+        console.log(data)
         product_info = data.split(" ");
+        console.log(product_info)
         pos = product_code.indexOf(product_info[0]);
+        console.log(pos)
         if(pos < 0)
             alert('Product is not avaialable in the selected warehouse');
         else{

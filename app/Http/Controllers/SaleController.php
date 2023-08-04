@@ -1137,7 +1137,7 @@ class SaleController extends Controller
                                 ])->orWhere([
                                     ['categories.parent_id', $category_id],
                                     ['products.is_active', true]
-                                ])->select('products.id', 'products.name', 'products.code', 'products.image', 'products.is_variant')->get();
+                                ])->select('products.id', 'products.name', 'products.code', 'products.image', 'products.is_variant','products.price')->get();
         }
         elseif(($category_id == 0) && ($brand_id != 0)){
             $lims_product_list = Product::where([
@@ -1166,6 +1166,7 @@ class SaleController extends Controller
             else {
                 $data['name'][$index] = $product->name;
                 $data['code'][$index] = $product->code;
+                $data['price'][$index] = $product->price;
                 $images = explode(",", $product->image);
                 $data['image'][$index] = $images[0];
                 $index++;
