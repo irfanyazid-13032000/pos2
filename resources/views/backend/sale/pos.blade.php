@@ -1004,7 +1004,7 @@
                                         <span class="totals-title" style="font-size:20px;">{{trans('file.Items')}}</span><span id="item" style="font-size:20px;">0</span>
                                     </div>
                                     <div class="col-sm-4">
-                                        <span class="totals-title">{{trans('file.Total')}}</span><span id="subtotal">0.00</span>
+                                        <span class="totals-title"  style="font-size:20px;">{{trans('file.Total')}}</span><span id="subtotal" style="font-size:20px;">0.00</span>
                                     </div>
                                     <div class="col-sm-4">
                                         <!-- <span class="totals-title">{/{trans('file.Discount')}} <button type="button" class="btn btn-link btn-sm" data-toggle="modal" data-target="#order-discount-modal"> <i class="dripicons-document-edit"></i></button></span><span id="discount">0.00</span> -->
@@ -2392,9 +2392,9 @@ function populateProduct(data) {
         $.each(data['name'], function(index) {
             var product_info = data['code'][index]+' (' + data['name'][index] + ')';
             if(index % 3 == 0 && index != 0)
-                tableData += '</tr><tr><td class="product-img sound-btn" title="'+data['name'][index]+'" data-product = "'+product_info+'"><img  src="images/product/'+data['image'][index]+'" width="100%" /><p style="font-size: 20px; font-weight: bold;">'+data['name'][index]+'</p><span>Rp. '+data['price'][index]+'</span></td>';
+                tableData += '</tr><tr><td class="product-img sound-btn" title="'+data['name'][index]+'" data-product = "'+product_info+'"><img  src="images/product/'+data['image'][index]+'" width="100%" /><p style="font-size: 16px; font-weight: bold;">'+data['name'][index]+'</p><span>Rp. '+data['price'][index]+'</span></td>';
             else
-                tableData += '<td class="product-img sound-btn" title="'+data['name'][index]+'" data-product = "'+product_info+'"><img  src="images/product/'+data['image'][index]+'" width="100%" /><p style="font-size: 20px; font-weight: bold;">'+data['name'][index]+'</p><span>Rp. '+data['price'][index]+'</span></td>';
+                tableData += '<td class="product-img sound-btn" title="'+data['name'][index]+'" data-product = "'+product_info+'"><img  src="images/product/'+data['image'][index]+'" width="100%" /><p style="font-size: 16px; font-weight: bold;">'+data['name'][index]+'</p><span>Rp. '+data['price'][index]+'</span></td>';
         });
 
         if(data['name'].length % 3){
